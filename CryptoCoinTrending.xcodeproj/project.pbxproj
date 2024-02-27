@@ -12,6 +12,12 @@
 		2E5240A32B8DB10200036E36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5240A22B8DB10200036E36 /* ViewController.swift */; };
 		2E5240A82B8DB10300036E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E5240A72B8DB10300036E36 /* Assets.xcassets */; };
 		2E5240AB2B8DB10300036E36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5240A92B8DB10300036E36 /* LaunchScreen.storyboard */; };
+		2E5240B42B8DB1D900036E36 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2E5240B32B8DB1D900036E36 /* Alamofire */; };
+		2E5240B72B8DB1E600036E36 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 2E5240B62B8DB1E600036E36 /* DGCharts */; };
+		2E5240B92B8DB1E600036E36 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 2E5240B82B8DB1E600036E36 /* DGChartsDynamic */; };
+		2E5240BC2B8DB1F000036E36 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E5240BB2B8DB1F000036E36 /* SnapKit */; };
+		2E5240BF2B8DB1F700036E36 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2E5240BE2B8DB1F700036E36 /* Then */; };
+		2E5240C22B8DB24F00036E36 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 2E5240C12B8DB24F00036E36 /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E5240C22B8DB24F00036E36 /* Toast in Frameworks */,
+				2E5240BF2B8DB1F700036E36 /* Then in Frameworks */,
+				2E5240B72B8DB1E600036E36 /* DGCharts in Frameworks */,
+				2E5240BC2B8DB1F000036E36 /* SnapKit in Frameworks */,
+				2E5240B92B8DB1E600036E36 /* DGChartsDynamic in Frameworks */,
+				2E5240B42B8DB1D900036E36 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +92,14 @@
 			dependencies = (
 			);
 			name = CryptoCoinTrending;
+			packageProductDependencies = (
+				2E5240B32B8DB1D900036E36 /* Alamofire */,
+				2E5240B62B8DB1E600036E36 /* DGCharts */,
+				2E5240B82B8DB1E600036E36 /* DGChartsDynamic */,
+				2E5240BB2B8DB1F000036E36 /* SnapKit */,
+				2E5240BE2B8DB1F700036E36 /* Then */,
+				2E5240C12B8DB24F00036E36 /* Toast */,
+			);
 			productName = CryptoCoinTrending;
 			productReference = 2E52409B2B8DB10200036E36 /* CryptoCoinTrending.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +128,13 @@
 				Base,
 			);
 			mainGroup = 2E5240922B8DB10100036E36;
+			packageReferences = (
+				2E5240B22B8DB1D900036E36 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2E5240B52B8DB1E600036E36 /* XCRemoteSwiftPackageReference "Charts" */,
+				2E5240BA2B8DB1F000036E36 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				2E5240BD2B8DB1F700036E36 /* XCRemoteSwiftPackageReference "Then" */,
+				2E5240C02B8DB24F00036E36 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+			);
 			productRefGroup = 2E52409C2B8DB10200036E36 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -351,6 +378,82 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2E5240B22B8DB1D900036E36 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+		2E5240B52B8DB1E600036E36 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		2E5240BA2B8DB1F000036E36 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		2E5240BD2B8DB1F700036E36 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		2E5240C02B8DB24F00036E36 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E5240B32B8DB1D900036E36 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E5240B22B8DB1D900036E36 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		2E5240B62B8DB1E600036E36 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E5240B52B8DB1E600036E36 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+		2E5240B82B8DB1E600036E36 /* DGChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E5240B52B8DB1E600036E36 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGChartsDynamic;
+		};
+		2E5240BB2B8DB1F000036E36 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E5240BA2B8DB1F000036E36 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		2E5240BE2B8DB1F700036E36 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E5240BD2B8DB1F700036E36 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		2E5240C12B8DB24F00036E36 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E5240C02B8DB24F00036E36 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2E5240932B8DB10100036E36 /* Project object */;
 }
