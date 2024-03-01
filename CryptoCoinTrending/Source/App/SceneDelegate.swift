@@ -16,9 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        let reminderViewController = TrendingViewController()
-        let navigationController = UINavigationController(rootViewController: reminderViewController)
-        window?.rootViewController = navigationController
+        let tabBarController = TabBarViewController()
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
 

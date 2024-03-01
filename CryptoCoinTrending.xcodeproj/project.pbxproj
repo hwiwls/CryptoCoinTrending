@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2D4A192B91E1FD00857146 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A182B91E1FD00857146 /* TabBarViewController.swift */; };
+		2E2D4A1C2B91E21B00857146 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A1B2B91E21B00857146 /* SearchViewController.swift */; };
+		2E2D4A1E2B91E22900857146 /* MyFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A1D2B91E22900857146 /* MyFavoriteViewController.swift */; };
+		2E2D4A222B91E50700857146 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A212B91E50700857146 /* ChartViewController.swift */; };
+		2E2D4A242B91E50E00857146 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A232B91E50E00857146 /* MyPageViewController.swift */; };
 		2E52409F2B8DB10200036E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52409E2B8DB10200036E36 /* AppDelegate.swift */; };
 		2E5240A12B8DB10200036E36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5240A02B8DB10200036E36 /* SceneDelegate.swift */; };
 		2E5240A82B8DB10300036E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E5240A72B8DB10300036E36 /* Assets.xcassets */; };
@@ -34,6 +39,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E2D4A182B91E1FD00857146 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		2E2D4A1B2B91E21B00857146 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2E2D4A1D2B91E22900857146 /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
+		2E2D4A212B91E50700857146 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		2E2D4A232B91E50E00857146 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		2E52409B2B8DB10200036E36 /* CryptoCoinTrending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoCoinTrending.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52409E2B8DB10200036E36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E5240A02B8DB10200036E36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +83,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E2D4A172B91E1EC00857146 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				2E2D4A1A2B91E20100857146 /* ViewController */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		2E2D4A1A2B91E20100857146 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E2D4A182B91E1FD00857146 /* TabBarViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2E2D4A1F2B91E22C00857146 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E62B3C62B90EDA10094281F /* MyFavoriteTableViewCell.swift */,
+				2E5240F82B8E36C100036E36 /* ChartOverviewTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		2E2D4A202B91E23100857146 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E5240F62B8E2F0400036E36 /* ChartCollectionViewCell.swift */,
+				2E5240E72B8DC15300036E36 /* MyFavoriteCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		2E5240922B8DB10100036E36 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				2E5240E92B8DC2C900036E36 /* Base */,
+				2E2D4A172B91E1EC00857146 /* TabBar */,
 				2E5240C72B8DB2FF00036E36 /* Trending */,
 				2E5240C82B8DB30600036E36 /* Search */,
 				2E5240C92B8DB31800036E36 /* MyFavorite */,
@@ -207,11 +252,9 @@
 		2E5240CE2B8DB37C00036E36 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2E5240E72B8DC15300036E36 /* MyFavoriteCollectionViewCell.swift */,
-				2E5240F62B8E2F0400036E36 /* ChartCollectionViewCell.swift */,
-				2E5240F82B8E36C100036E36 /* ChartOverviewTableViewCell.swift */,
-				2E62B3C62B90EDA10094281F /* MyFavoriteTableViewCell.swift */,
 				2E62B3C82B90FAC70094281F /* TrendingView.swift */,
+				2E2D4A202B91E23100857146 /* CollectionViewCell */,
+				2E2D4A1F2B91E22C00857146 /* TableViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,6 +276,7 @@
 		2E5240D12B8DB39700036E36 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2E2D4A1B2B91E21B00857146 /* SearchViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -247,6 +291,7 @@
 		2E5240D32B8DB45500036E36 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2E2D4A1D2B91E22900857146 /* MyFavoriteViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -268,6 +313,7 @@
 		2E5240D62B8DB46200036E36 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2E2D4A212B91E50700857146 /* ChartViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -289,6 +335,7 @@
 		2E5240D92B8DB46F00036E36 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2E2D4A232B91E50E00857146 /* MyPageViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -449,10 +496,15 @@
 				2E52409F2B8DB10200036E36 /* AppDelegate.swift in Sources */,
 				2E5240E32B8DBC9800036E36 /* TrendingViewController.swift in Sources */,
 				2E5240EE2B8DC3AF00036E36 /* TrendingViewModel.swift in Sources */,
+				2E2D4A222B91E50700857146 /* ChartViewController.swift in Sources */,
+				2E2D4A192B91E1FD00857146 /* TabBarViewController.swift in Sources */,
 				2E5240F22B8DE76900036E36 /* CoinGeckoAPIManager.swift in Sources */,
 				2E5240DF2B8DBA5600036E36 /* UIColor+CustomColor.swift in Sources */,
+				2E2D4A1C2B91E21B00857146 /* SearchViewController.swift in Sources */,
 				2E5240EC2B8DC2E100036E36 /* BaseViewController.swift in Sources */,
 				2E5240E62B8DC0F900036E36 /* Observable.swift in Sources */,
+				2E2D4A242B91E50E00857146 /* MyPageViewController.swift in Sources */,
+				2E2D4A1E2B91E22900857146 /* MyFavoriteViewController.swift in Sources */,
 				2E5240F72B8E2F0400036E36 /* ChartCollectionViewCell.swift in Sources */,
 				2E5240F92B8E36C100036E36 /* ChartOverviewTableViewCell.swift in Sources */,
 				2E5240A12B8DB10200036E36 /* SceneDelegate.swift in Sources */,
