@@ -8,7 +8,8 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+// 생각보다 높게 나오는 느낌
+final class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

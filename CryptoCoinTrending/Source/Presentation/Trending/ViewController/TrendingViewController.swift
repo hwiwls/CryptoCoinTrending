@@ -18,13 +18,13 @@ enum CollectionViewType: Int {
 
 final class TrendingViewController: BaseViewController {
     
-    let viewModel = TrendingViewModel()
+    private let viewModel = TrendingViewModel()
     
-    let trendingView = TrendingView()
+    private let trendingView = TrendingView()
     
-    var coins: [Coin] = []
+    private var coins: [Coin] = []
     
-    let tableViewTitle = ["Top 15 Coin", "Top 7 NFT"]
+    private let tableViewTitle = ["Top 15 Coin", "Top 7 NFT"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +92,11 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             cell.priceLabel.text = coin.item.data.price
             if let priceChangePercentage = coin.item.data.priceChangePercentage24H["krw"] {
                 cell.priceChangePercentLabel.text = String(format: "%.2f", priceChangePercentage) + "%"
+                if priceChangePercentage < 0 {
+                    cell.priceChangePercentLabel.textColor = .pointBlue
+                } else {
+                    cell.priceChangePercentLabel.textColor = .pointReactiveRed
+                }
             }
             if let url = URL(string: coin.item.small) {
                 cell.logoImageView.kf.setImage(with: url)
@@ -106,6 +111,11 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             cell.priceLabel.text = nft.data.floorPrice
             if let priceChangePercentage = Double(nft.data.floorPriceInUsd24HPercentageChange) {
                 cell.priceChangePercentLabel.text = String(format: "%.2f", priceChangePercentage) + "%"
+                if priceChangePercentage < 0 {
+                    cell.priceChangePercentLabel.textColor = .pointBlue
+                } else {
+                    cell.priceChangePercentLabel.textColor = .pointReactiveRed
+                }
             }
             if let url = URL(string: nft.thumb) {
                 cell.logoImageView.kf.setImage(with: url)

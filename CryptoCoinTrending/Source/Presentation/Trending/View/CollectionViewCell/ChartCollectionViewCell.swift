@@ -99,7 +99,7 @@ class ChartCollectionViewCell: UICollectionViewCell {
         priceLabel.snp.makeConstraints {
             $0.bottom.equalTo(nameLabel.snp.bottom)
             $0.trailing.equalToSuperview().inset(16)
-            $0.width.equalTo(100)
+            $0.width.equalTo(80)
         }
         
         priceChangePercentLabel.snp.makeConstraints {
