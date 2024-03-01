@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class ChartCollectionViewCell: UICollectionViewCell {
+final class ChartCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "ChartCellIdentifier"
     

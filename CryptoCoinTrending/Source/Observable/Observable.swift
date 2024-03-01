@@ -7,7 +7,6 @@
 
 import Foundation
 
-// 목적: 실시간으로 달라지는 데이터 감지
 class Observable<T> {
     
     private var closure: ((T) -> Void)?  // 현재 value 값을 받아와서 실행
@@ -23,7 +22,6 @@ class Observable<T> {
     }
     
     func bind(_ closure: @escaping (T) -> Void) {   // clousure 함수 기능 설정
-        print(#function)
         closure(value)
         self.closure = closure
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendingView: UIView {
+final class TrendingView: UIView {
     let titleLabel = UILabel().then {
         $0.text = "Crypto Coin"
         $0.textColor = .black

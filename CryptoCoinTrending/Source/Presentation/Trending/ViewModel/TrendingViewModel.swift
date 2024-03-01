@@ -24,6 +24,4 @@ final class TrendingViewModel {
             self.outputNFTsData.value = results.nfts
         }
     }
-    
-    
 }

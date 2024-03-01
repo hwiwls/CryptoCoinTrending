@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class ChartOverviewTableViewCell: UITableViewCell {
+final class ChartOverviewTableViewCell: UITableViewCell {
     
     static let identifier = "ChartOverviewCellIdentifier"
     

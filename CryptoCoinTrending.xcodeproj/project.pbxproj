@@ -13,6 +13,9 @@
 		2E2D4A222B91E50700857146 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A212B91E50700857146 /* ChartViewController.swift */; };
 		2E2D4A242B91E50E00857146 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A232B91E50E00857146 /* MyPageViewController.swift */; };
 		2E2D4A272B920E7200857146 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2E2D4A262B920E7200857146 /* Kingfisher */; };
+		2E2D4A2A2B92325F00857146 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A292B92325F00857146 /* SearchView.swift */; };
+		2E2D4A2C2B92385500857146 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A2B2B92385500857146 /* SearchResultTableViewCell.swift */; };
+		2E2D4A2F2B923A2200857146 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A2E2B923A2200857146 /* SearchViewModel.swift */; };
 		2E52409F2B8DB10200036E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52409E2B8DB10200036E36 /* AppDelegate.swift */; };
 		2E5240A12B8DB10200036E36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5240A02B8DB10200036E36 /* SceneDelegate.swift */; };
 		2E5240A82B8DB10300036E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E5240A72B8DB10300036E36 /* Assets.xcassets */; };
@@ -45,6 +48,9 @@
 		2E2D4A1D2B91E22900857146 /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
 		2E2D4A212B91E50700857146 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		2E2D4A232B91E50E00857146 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		2E2D4A292B92325F00857146 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		2E2D4A2B2B92385500857146 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		2E2D4A2E2B923A2200857146 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		2E52409B2B8DB10200036E36 /* CryptoCoinTrending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoCoinTrending.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52409E2B8DB10200036E36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E5240A02B8DB10200036E36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +123,14 @@
 				2E5240E72B8DC15300036E36 /* MyFavoriteCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		2E2D4A2D2B923A0000857146 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E2D4A2B2B92385500857146 /* SearchResultTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		2E5240922B8DB10100036E36 = {
@@ -264,6 +278,8 @@
 		2E5240CF2B8DB38B00036E36 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2E2D4A2D2B923A0000857146 /* TableViewCell */,
+				2E2D4A292B92325F00857146 /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,6 +287,7 @@
 		2E5240D02B8DB39100036E36 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2E2D4A2E2B923A2200857146 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -501,12 +518,15 @@
 				2E5240E32B8DBC9800036E36 /* TrendingViewController.swift in Sources */,
 				2E5240EE2B8DC3AF00036E36 /* TrendingViewModel.swift in Sources */,
 				2E2D4A222B91E50700857146 /* ChartViewController.swift in Sources */,
+				2E2D4A2A2B92325F00857146 /* SearchView.swift in Sources */,
 				2E2D4A192B91E1FD00857146 /* TabBarViewController.swift in Sources */,
+				2E2D4A2C2B92385500857146 /* SearchResultTableViewCell.swift in Sources */,
 				2E5240F22B8DE76900036E36 /* CoinGeckoAPIManager.swift in Sources */,
 				2E5240DF2B8DBA5600036E36 /* UIColor+CustomColor.swift in Sources */,
 				2E2D4A1C2B91E21B00857146 /* SearchViewController.swift in Sources */,
 				2E5240EC2B8DC2E100036E36 /* BaseViewController.swift in Sources */,
 				2E5240E62B8DC0F900036E36 /* Observable.swift in Sources */,
+				2E2D4A2F2B923A2200857146 /* SearchViewModel.swift in Sources */,
 				2E2D4A242B91E50E00857146 /* MyPageViewController.swift in Sources */,
 				2E2D4A1E2B91E22900857146 /* MyFavoriteViewController.swift in Sources */,
 				2E5240F72B8E2F0400036E36 /* ChartCollectionViewCell.swift in Sources */,

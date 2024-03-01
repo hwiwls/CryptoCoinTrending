@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class MyFavoriteTableViewCell: UITableViewCell {
+final class MyFavoriteTableViewCell: UITableViewCell {
 
     static let identifier = "MyFavoriteCellIdentifier"
     
