@@ -29,6 +29,8 @@
 		2E5240F52B8E266100036E36 /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5240F42B8E266100036E36 /* Trending.swift */; };
 		2E5240F72B8E2F0400036E36 /* ChartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5240F62B8E2F0400036E36 /* ChartCollectionViewCell.swift */; };
 		2E5240F92B8E36C100036E36 /* ChartOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5240F82B8E36C100036E36 /* ChartOverviewTableViewCell.swift */; };
+		2E62B3C72B90EDA10094281F /* MyFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62B3C62B90EDA10094281F /* MyFavoriteTableViewCell.swift */; };
+		2E62B3C92B90FAC70094281F /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62B3C82B90FAC70094281F /* TrendingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		2E5240F42B8E266100036E36 /* Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
 		2E5240F62B8E2F0400036E36 /* ChartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E5240F82B8E36C100036E36 /* ChartOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartOverviewTableViewCell.swift; sourceTree = "<group>"; };
+		2E62B3C62B90EDA10094281F /* MyFavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		2E62B3C82B90FAC70094281F /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,8 @@
 				2E5240E72B8DC15300036E36 /* MyFavoriteCollectionViewCell.swift */,
 				2E5240F62B8E2F0400036E36 /* ChartCollectionViewCell.swift */,
 				2E5240F82B8E36C100036E36 /* ChartOverviewTableViewCell.swift */,
+				2E62B3C62B90EDA10094281F /* MyFavoriteTableViewCell.swift */,
+				2E62B3C82B90FAC70094281F /* TrendingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -434,8 +440,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E62B3C72B90EDA10094281F /* MyFavoriteTableViewCell.swift in Sources */,
 				2E5240F52B8E266100036E36 /* Trending.swift in Sources */,
 				2E5240E82B8DC15300036E36 /* MyFavoriteCollectionViewCell.swift in Sources */,
+				2E62B3C92B90FAC70094281F /* TrendingView.swift in Sources */,
 				2E5240F02B8DE31200036E36 /* CoinGeckoAPI.swift in Sources */,
 				2E5240E12B8DBAF000036E36 /* UIView+addSubViews.swift in Sources */,
 				2E52409F2B8DB10200036E36 /* AppDelegate.swift in Sources */,

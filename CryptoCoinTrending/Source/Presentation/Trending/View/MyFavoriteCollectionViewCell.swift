@@ -25,7 +25,7 @@ final class MyFavoriteCollectionViewCell: UICollectionViewCell {
     
     private let nameLabel = UILabel().then {
         $0.text = "Bitcoin"
-        $0.textColor = .black
+        $0.textColor = .pointDarkGray
         $0.font = .boldSystemFont(ofSize: 14)
         $0.textAlignment = .left
     }
@@ -39,7 +39,7 @@ final class MyFavoriteCollectionViewCell: UICollectionViewCell {
     
     private let priceLabel = UILabel().then {
         $0.text = "₩69,234,245"
-        $0.textColor = .pointGray
+        $0.textColor = .pointDarkGray
         $0.font = .boldSystemFont(ofSize: 18)
         $0.textAlignment = .left
     }
@@ -85,7 +85,7 @@ final class MyFavoriteCollectionViewCell: UICollectionViewCell {
         
         coinImageView.snp.makeConstraints {
             $0.width.height.equalTo(35)
-            $0.leading.top.equalToSuperview().offset(12)
+            $0.leading.top.equalToSuperview().offset(20)
         }
         
         nameLabel.snp.makeConstraints {

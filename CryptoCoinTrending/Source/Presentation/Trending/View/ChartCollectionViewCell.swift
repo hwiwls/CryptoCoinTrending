@@ -16,7 +16,7 @@ class ChartCollectionViewCell: UICollectionViewCell {
     private let rankLabel = UILabel().then {
         $0.text = "1"
         $0.font = .boldSystemFont(ofSize: 18)
-        $0.textColor = .black
+        $0.textColor = .pointDarkGray
     }
     
     private let logoImageView = UIImageView().then {
@@ -27,7 +27,7 @@ class ChartCollectionViewCell: UICollectionViewCell {
     
     private let nameLabel = UILabel().then {
         $0.text = "nameLabel"
-        $0.textColor = .black
+        $0.textColor = .pointDarkGray
         $0.font = .boldSystemFont(ofSize: 16)
     }
     
@@ -39,7 +39,7 @@ class ChartCollectionViewCell: UICollectionViewCell {
     
     private let priceLabel = UILabel().then {
         $0.text = "$0.4715"
-        $0.textColor = .black
+        $0.textColor = .pointDarkGray
         $0.font = .systemFont(ofSize: 15)
     }
     
@@ -51,7 +51,6 @@ class ChartCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .pointBlue
         
         configureHierarchy()
         configureLayout()
