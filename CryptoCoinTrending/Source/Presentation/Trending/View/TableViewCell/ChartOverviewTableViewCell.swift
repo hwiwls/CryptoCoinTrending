@@ -5,7 +5,6 @@
 //  Created by hwijinjeong on 2/28/24.
 //
 
-
 import UIKit
 import SnapKit
 import Then
@@ -59,7 +58,7 @@ class ChartOverviewTableViewCell: UITableViewCell {
         }
         
         chartCollectionView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(8)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(210)
         }

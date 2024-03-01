@@ -17,34 +17,34 @@ final class MyFavoriteCollectionViewCell: UICollectionViewCell {
         $0.backgroundColor = .pointLightGray
     }
     
-    private lazy var coinImageView = UIImageView().then {
+    let coinImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.image = UIImage(systemName: "star")
         $0.backgroundColor = .orange
     }
     
-    private let nameLabel = UILabel().then {
+    let nameLabel = UILabel().then {
         $0.text = "Bitcoin"
         $0.textColor = .pointDarkGray
         $0.font = .boldSystemFont(ofSize: 14)
         $0.textAlignment = .left
     }
     
-    private let symbolLabel = UILabel().then {
+    let symbolLabel = UILabel().then {
         $0.text = "BTC"
         $0.textColor = .pointGray
         $0.font = .systemFont(ofSize: 12)
         $0.textAlignment = .left
     }
     
-    private let priceLabel = UILabel().then {
+    let priceLabel = UILabel().then {
         $0.text = "₩69,234,245"
         $0.textColor = .pointDarkGray
         $0.font = .boldSystemFont(ofSize: 18)
         $0.textAlignment = .left
     }
     
-    private let priceChangePercentageLabel = UILabel().then {
+    let priceChangePercentageLabel = UILabel().then {
         $0.text = "₩69,234,245"
         $0.textColor = .pointGray
         $0.font = .boldSystemFont(ofSize: 12)
@@ -63,7 +63,9 @@ final class MyFavoriteCollectionViewCell: UICollectionViewCell {
     
     private func configView() {
         contentsView.layer.cornerRadius = 20
-        coinImageView.layer.cornerRadius = coinImageView.frame.width / 2
+        DispatchQueue.main.async {
+            self.coinImageView.layer.cornerRadius = self.coinImageView.frame.width / 2
+        }
     }
     
     private func configHierarchy() {

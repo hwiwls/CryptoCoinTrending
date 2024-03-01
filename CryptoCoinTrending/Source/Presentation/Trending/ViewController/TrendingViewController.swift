@@ -8,66 +8,53 @@
 import UIKit
 import SnapKit
 import Then
+import Kingfisher
 
 final class TrendingViewController: BaseViewController {
     
     let viewModel = TrendingViewModel()
     
-    let tableViewTitle = ["Top 15 Coin", "Top 7 NFT"]
-    
-//    private let titleLabel = UILabel().then {
-//        $0.text = "Crypto Coin"
-//        $0.textColor = .black
-//        $0.font = .boldSystemFont(ofSize: 28)
-//        $0.textAlignment = .left
-//    }
-//    
-//    let tableView = UITableView()
-    
     let trendingView = TrendingView()
+    
+    var coins: [Coin] = []
+    
+    let tableViewTitle = ["Top 15 Coin", "Top 7 NFT"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CoinGeckoAPIManager.shared.fetchCoinTrending(api: .trending) { results in
+            self.coins = results.coins
+            DispatchQueue.main.async {
+                self.trendingView.tableView.reloadData()
+            }
+        }
     }
     
     override func configView() {
         trendingView.tableView.delegate = self
         trendingView.tableView.dataSource = self
         trendingView.setupView()
-//        tableView.separatorStyle = .none
-//        tableView.backgroundColor = .clear
-//        tableView.register(MyFavoriteTableViewCell.self, forCellReuseIdentifier: MyFavoriteTableViewCell.identifier)
-//        tableView.register(ChartOverviewTableViewCell.self, forCellReuseIdentifier: ChartOverviewTableViewCell.identifier)
     }
     
     override func configHierarchy() {
-//        view.addSubviews([
-//            titleLabel,
-//            tableView
-//        ])
         view.addSubview(trendingView)
     }
     
     override func configLayout() {
-//        titleLabel.snp.makeConstraints {
-//            $0.top.equalTo(view.safeAreaLayoutGuide).offset(24)
-//            $0.leading.equalTo(view.safeAreaLayoutGuide).offset(20)
-//        }
-//        tableView.snp.makeConstraints {
-//            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
-//            $0.leading.bottom.trailing.equalTo(view.safeAreaLayoutGuide)
-//        }
-        
         trendingView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
-
 }
 
 extension TrendingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if collectionView.tag == 0 {
+            return 2
+        } else {
+            return coins.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,6 +64,23 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             return cell
         } else if collectionView.tag == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChartCollectionViewCell.identifier, for: indexPath) as! ChartCollectionViewCell
+            
+            
+            let coin = coins[indexPath.item]
+            cell.nameLabel.text = coin.item.name
+            cell.symbolLabel.text = coin.item.symbol
+            if let price = Double(coin.item.data.price) {
+                cell.priceLabel.text = String(format: "%.4f", price)
+            }
+            if let priceChangePercentage = coin.item.data.priceChangePercentage24H["krw"] {
+                cell.priceChangePercentLabel.text = String(format: "%.2f", priceChangePercentage) + "%"
+            }
+            
+            if let url = URL(string: coin.item.small) {
+                cell.logoImageView.kf.setImage(with: url)
+            }
+            
+            cell.rankLabel.text = "\(indexPath.item + 1)"
             
             return cell
         } else {
@@ -103,6 +107,7 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
             cell.myFavoriteCollectionView.tag = indexPath.row
             cell.titleLabel.text = "My Favorite"
             
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: ChartOverviewTableViewCell.identifier, for: indexPath) as! ChartOverviewTableViewCell
@@ -112,8 +117,8 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
             cell.chartCollectionView.dataSource = self
             cell.chartCollectionView.register(ChartCollectionViewCell.self, forCellWithReuseIdentifier: ChartCollectionViewCell.identifier)
             cell.chartCollectionView.tag = indexPath.row
-//            cell.chartCollectionView.reloadData()
             cell.titleLabel.text = tableViewTitle[indexPath.row - 1]
+            cell.chartCollectionView.reloadData()
             
             return cell
         }
@@ -121,7 +126,7 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 220
+            return 230
         } else {
             return 280
         }

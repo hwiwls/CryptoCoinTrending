@@ -31,8 +31,6 @@ class MyFavoriteTableViewCell: UITableViewCell {
         return layout
     }
     
-    
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -60,7 +58,7 @@ class MyFavoriteTableViewCell: UITableViewCell {
         }
         
         myFavoriteCollectionView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(8)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(16)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(160)
         }

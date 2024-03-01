@@ -28,9 +28,11 @@ struct Item: Codable {
 // MARK: - ItemData
 struct ItemData: Codable {
     let priceChangePercentage24H: [String: Double]
+    let price: String
     
     enum CodingKeys: String, CodingKey {
         case priceChangePercentage24H = "price_change_percentage_24h"
+        case price = "price"
     }
 }
 

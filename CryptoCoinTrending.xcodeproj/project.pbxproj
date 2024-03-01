@@ -12,6 +12,7 @@
 		2E2D4A1E2B91E22900857146 /* MyFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A1D2B91E22900857146 /* MyFavoriteViewController.swift */; };
 		2E2D4A222B91E50700857146 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A212B91E50700857146 /* ChartViewController.swift */; };
 		2E2D4A242B91E50E00857146 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D4A232B91E50E00857146 /* MyPageViewController.swift */; };
+		2E2D4A272B920E7200857146 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2E2D4A262B920E7200857146 /* Kingfisher */; };
 		2E52409F2B8DB10200036E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52409E2B8DB10200036E36 /* AppDelegate.swift */; };
 		2E5240A12B8DB10200036E36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5240A02B8DB10200036E36 /* SceneDelegate.swift */; };
 		2E5240A82B8DB10300036E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E5240A72B8DB10300036E36 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 			files = (
 				2E5240C22B8DB24F00036E36 /* Toast in Frameworks */,
 				2E5240BF2B8DB1F700036E36 /* Then in Frameworks */,
+				2E2D4A272B920E7200857146 /* Kingfisher in Frameworks */,
 				2E5240B72B8DB1E600036E36 /* DGCharts in Frameworks */,
 				2E5240BC2B8DB1F000036E36 /* SnapKit in Frameworks */,
 				2E5240B92B8DB1E600036E36 /* DGChartsDynamic in Frameworks */,
@@ -425,6 +427,7 @@
 				2E5240BB2B8DB1F000036E36 /* SnapKit */,
 				2E5240BE2B8DB1F700036E36 /* Then */,
 				2E5240C12B8DB24F00036E36 /* Toast */,
+				2E2D4A262B920E7200857146 /* Kingfisher */,
 			);
 			productName = CryptoCoinTrending;
 			productReference = 2E52409B2B8DB10200036E36 /* CryptoCoinTrending.app */;
@@ -460,6 +463,7 @@
 				2E5240BA2B8DB1F000036E36 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2E5240BD2B8DB1F700036E36 /* XCRemoteSwiftPackageReference "Then" */,
 				2E5240C02B8DB24F00036E36 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				2E2D4A252B920E7200857146 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 2E52409C2B8DB10200036E36 /* Products */;
 			projectDirPath = "";
@@ -724,6 +728,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2E2D4A252B920E7200857146 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 		2E5240B22B8DB1D900036E36 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -767,6 +779,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2E2D4A262B920E7200857146 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E2D4A252B920E7200857146 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		2E5240B32B8DB1D900036E36 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2E5240B22B8DB1D900036E36 /* XCRemoteSwiftPackageReference "Alamofire" */;

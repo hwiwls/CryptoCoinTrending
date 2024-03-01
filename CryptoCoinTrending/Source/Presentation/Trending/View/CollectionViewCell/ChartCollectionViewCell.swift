@@ -13,37 +13,37 @@ class ChartCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "ChartCellIdentifier"
     
-    private let rankLabel = UILabel().then {
+    let rankLabel = UILabel().then {
         $0.text = "1"
         $0.font = .boldSystemFont(ofSize: 18)
         $0.textColor = .pointDarkGray
     }
     
-    private let logoImageView = UIImageView().then {
+    let logoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.image = UIImage(systemName: "star")
         $0.backgroundColor = .brown
     }
     
-    private let nameLabel = UILabel().then {
+    let nameLabel = UILabel().then {
         $0.text = "nameLabel"
         $0.textColor = .pointDarkGray
         $0.font = .boldSystemFont(ofSize: 16)
     }
     
-    private let symbolLabel = UILabel().then {
+    let symbolLabel = UILabel().then {
         $0.text = "symbolLabel"
         $0.textColor = .pointDarkGray
         $0.font = .systemFont(ofSize: 14)
     }
     
-    private let priceLabel = UILabel().then {
+    let priceLabel = UILabel().then {
         $0.text = "$0.4715"
         $0.textColor = .pointDarkGray
         $0.font = .systemFont(ofSize: 15)
     }
     
-    private let priceChangePercentLabel = UILabel().then {
+    let priceChangePercentLabel = UILabel().then {
         $0.text = "+21.18%"
         $0.textColor = .red
         $0.font = .systemFont(ofSize: 13)
