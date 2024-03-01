@@ -29,6 +29,7 @@ class ChartCollectionViewCell: UICollectionViewCell {
         $0.text = "nameLabel"
         $0.textColor = .pointDarkGray
         $0.font = .boldSystemFont(ofSize: 16)
+        $0.textAlignment = .left
     }
     
     let symbolLabel = UILabel().then {
@@ -41,6 +42,7 @@ class ChartCollectionViewCell: UICollectionViewCell {
         $0.text = "$0.4715"
         $0.textColor = .pointDarkGray
         $0.font = .systemFont(ofSize: 15)
+        $0.textAlignment = .right
     }
     
     let priceChangePercentLabel = UILabel().then {
@@ -86,6 +88,7 @@ class ChartCollectionViewCell: UICollectionViewCell {
         nameLabel.snp.makeConstraints {
             $0.top.equalTo(logoImageView.snp.top)
             $0.leading.equalTo(logoImageView.snp.trailing).offset(8)
+            $0.width.equalTo(150)
         }
         
         symbolLabel.snp.makeConstraints {
@@ -96,6 +99,7 @@ class ChartCollectionViewCell: UICollectionViewCell {
         priceLabel.snp.makeConstraints {
             $0.bottom.equalTo(nameLabel.snp.bottom)
             $0.trailing.equalToSuperview().inset(16)
+            $0.width.equalTo(100)
         }
         
         priceChangePercentLabel.snp.makeConstraints {

@@ -10,6 +10,12 @@ import SnapKit
 import Then
 import Kingfisher
 
+enum CollectionViewType: Int {
+    case myFavorite = 0
+    case coins = 1
+    case nfts = 2
+}
+
 final class TrendingViewController: BaseViewController {
     
     let viewModel = TrendingViewModel()
@@ -23,8 +29,18 @@ final class TrendingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CoinGeckoAPIManager.shared.fetchCoinTrending(api: .trending) { results in
-            self.coins = results.coins
+        bindData()
+        viewModel.inputViewDidLoadTrigger.value = ()
+    }
+    
+    func bindData() {
+        viewModel.outputCoinsData.bind { _ in
+            DispatchQueue.main.async {
+                self.trendingView.tableView.reloadData()
+            }
+        }
+        
+        viewModel.outputNFTsData.bind { _ in
             DispatchQueue.main.async {
                 self.trendingView.tableView.reloadData()
             }
@@ -48,44 +64,53 @@ final class TrendingViewController: BaseViewController {
     }
 }
 
+// 이 부분 코드들을 Protocol, Delegate를 사용해서 분리하기
 extension TrendingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView.tag == 0 {
+        guard let type = CollectionViewType(rawValue: collectionView.tag) else { return 0 }
+        switch type {
+        case .myFavorite:
             return 2
-        } else {
-            return coins.count
+        case .coins:
+            return viewModel.outputCoinsData.value.count
+        case .nfts:
+            return viewModel.outputNFTsData.value.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView.tag == 0 {
+        guard let type = CollectionViewType(rawValue: collectionView.tag) else { return UICollectionViewCell() }
+        switch type {
+        case .myFavorite:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyFavoriteCollectionViewCell.identifier, for: indexPath) as! MyFavoriteCollectionViewCell
-            
             return cell
-        } else if collectionView.tag == 1 {
+        case .coins:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChartCollectionViewCell.identifier, for: indexPath) as! ChartCollectionViewCell
-            
-            
-            let coin = coins[indexPath.item]
+            let coin = viewModel.outputCoinsData.value[indexPath.item]
             cell.nameLabel.text = coin.item.name
             cell.symbolLabel.text = coin.item.symbol
-            if let price = Double(coin.item.data.price) {
-                cell.priceLabel.text = String(format: "%.4f", price)
-            }
+            cell.priceLabel.text = coin.item.data.price
             if let priceChangePercentage = coin.item.data.priceChangePercentage24H["krw"] {
                 cell.priceChangePercentLabel.text = String(format: "%.2f", priceChangePercentage) + "%"
             }
-            
             if let url = URL(string: coin.item.small) {
                 cell.logoImageView.kf.setImage(with: url)
             }
-            
             cell.rankLabel.text = "\(indexPath.item + 1)"
-            
             return cell
-        } else {
+        case .nfts:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChartCollectionViewCell.identifier, for: indexPath) as! ChartCollectionViewCell
-            
+            let nft = viewModel.outputNFTsData.value[indexPath.item]
+            cell.nameLabel.text = nft.name
+            cell.symbolLabel.text = nft.symbol
+            cell.priceLabel.text = nft.data.floorPrice
+            if let priceChangePercentage = Double(nft.data.floorPriceInUsd24HPercentageChange) {
+                cell.priceChangePercentLabel.text = String(format: "%.2f", priceChangePercentage) + "%"
+            }
+            if let url = URL(string: nft.thumb) {
+                cell.logoImageView.kf.setImage(with: url)
+            }
+            cell.rankLabel.text = "\(indexPath.item + 1)"
             return cell
         }
     }
@@ -106,7 +131,6 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
             cell.myFavoriteCollectionView.register(MyFavoriteCollectionViewCell.self, forCellWithReuseIdentifier: MyFavoriteCollectionViewCell.identifier)
             cell.myFavoriteCollectionView.tag = indexPath.row
             cell.titleLabel.text = "My Favorite"
-            
             
             return cell
         } else {
