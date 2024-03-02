@@ -31,4 +31,12 @@ final class SearchViewModel {
     func saveToRealm(coin: SearchCoin) {
         repository.createItem(coin)
     }
+    
+    func deleteFromRealm(coin: SearchCoin) {
+        repository.deleteItem(coin)
+    }
+    
+    func isCoinFavorite(coin: SearchCoin) -> Bool {
+        return repository.isItemStored(coin)
+    }
 }

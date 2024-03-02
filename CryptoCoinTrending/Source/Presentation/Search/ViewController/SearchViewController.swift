@@ -54,6 +54,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath) as! SearchResultTableViewCell
         
+        cell.selectionStyle = .none
+        
         let searchResult = viewModel.outputSearchResultData.value[indexPath.row]
         
         if let searchText = searchView.searchBar.text, !searchText.isEmpty {
@@ -70,6 +72,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         if let url = URL(string: searchResult.thumb) {
             cell.logoImageView.kf.setImage(with: url)
         }
+        
+        let isFavorite = viewModel.isCoinFavorite(coin: searchResult)
+        cell.setFavoriteStatus(isFavorite)
         
         cell.symbolLabel.text = searchResult.symbol
         cell.delegate = self
@@ -92,6 +97,10 @@ extension SearchViewController: SearchResultTableViewCellDelegate {
     func favoriteButtonTapped(on cell: SearchResultTableViewCell) {
         guard let indexPath = searchView.tableView.indexPath(for: cell) else { return }
         let coin = viewModel.outputSearchResultData.value[indexPath.row]
-        viewModel.saveToRealm(coin: coin)
+        if cell.isFavorite {
+            viewModel.saveToRealm(coin: coin)
+        } else {
+            viewModel.deleteFromRealm(coin: coin)
+        }
     }
 }

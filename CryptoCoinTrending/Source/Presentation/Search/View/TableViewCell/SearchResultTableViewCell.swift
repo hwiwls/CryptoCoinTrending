@@ -15,9 +15,11 @@ protocol SearchResultTableViewCellDelegate: AnyObject {
 
 final class SearchResultTableViewCell: UITableViewCell {
     
+    static let identifier = "SearchResultCellIdentifier"
+    
     weak var delegate: SearchResultTableViewCellDelegate?
     
-    static let identifier = "SearchResultCellIdentifier"
+    var isFavorite: Bool = false
     
     let logoImageView = UIImageView().then {
         $0.image = UIImage(systemName: "star")
@@ -91,7 +93,14 @@ final class SearchResultTableViewCell: UITableViewCell {
         favoriteBtn.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
     }
     
+    func setFavoriteStatus(_ status: Bool) {
+        isFavorite = status
+        favoriteBtn.setImage(UIImage(systemName: status ? "star.fill" : "star")?.withRenderingMode(.alwaysOriginal).withTintColor(.pointPurple), for: .normal)
+    }
+    
     @objc func favoriteButtonTapped() {
+        isFavorite = !isFavorite
+        setFavoriteStatus(isFavorite)
         delegate?.favoriteButtonTapped(on: self)
     }
 }

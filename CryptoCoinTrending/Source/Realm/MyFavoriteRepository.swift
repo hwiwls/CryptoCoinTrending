@@ -21,4 +21,21 @@ final class StoredCoinRepository {
             print(error)
         }
     }
+    
+    func deleteItem(_ item: SearchCoin) {
+        do {
+            try realm.write {
+                if let storedCoin = realm.objects(StoredCoin.self).filter("bitcoinName == %@", item.name).first {
+                    realm.delete(storedCoin)
+                }
+            }
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func isItemStored(_ item: SearchCoin) -> Bool {
+        let storedCoin = realm.objects(StoredCoin.self).filter("bitcoinName == %@", item.name).first
+        return storedCoin != nil
+    }
 }
