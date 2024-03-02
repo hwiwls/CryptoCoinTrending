@@ -27,4 +27,19 @@ class CoinGeckoAPIManager {
         }
     }
     
+    func searchCoin(api: CoinGeckoAPI, completionHandler: @escaping (SearchModel) -> Void) {
+        AF.request(
+            api.endpoint,
+            method: api.method,
+            parameters: api.parameter
+        ).responseDecodable(of: SearchModel.self) { response in
+            switch response.result {
+            case .success(let success):
+                completionHandler(success)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+    }
+    
 }
