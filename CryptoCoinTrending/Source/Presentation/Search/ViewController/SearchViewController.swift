@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class SearchViewController: BaseViewController {
     
@@ -21,6 +22,9 @@ final class SearchViewController: BaseViewController {
         viewModel.outputSearchResultData.bind { _ in
             self.searchView.tableView.reloadData()
         }
+        
+        let realm = try! Realm()
+        print(realm.configuration.fileURL ?? "")
     }
     
     override func configView() {
@@ -68,6 +72,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.symbolLabel.text = searchResult.symbol
+        cell.delegate = self
         
         return cell
     }
@@ -80,5 +85,13 @@ extension SearchViewController: UISearchBarDelegate {
             self.searchResult = result.coins
             self.viewModel.inputSearchTrigger.value = searchBar.text
         }
+    }
+}
+
+extension SearchViewController: SearchResultTableViewCellDelegate {
+    func favoriteButtonTapped(on cell: SearchResultTableViewCell) {
+        guard let indexPath = searchView.tableView.indexPath(for: cell) else { return }
+        let coin = viewModel.outputSearchResultData.value[indexPath.row]
+        viewModel.saveToRealm(coin: coin)
     }
 }

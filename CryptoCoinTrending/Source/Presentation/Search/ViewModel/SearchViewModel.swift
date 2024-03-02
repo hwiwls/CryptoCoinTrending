@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class SearchViewModel {
     var inputViewDidLoadTrigger: Observable<Void?> = Observable(nil)
     var inputSearchTrigger: Observable<String?> = Observable(nil)
     var outputSearchResultData: Observable<[SearchCoin]> = Observable([])
     
+    let repository = StoredCoinRepository()
     
     init() {
         inputViewDidLoadTrigger.bind { _ in
@@ -24,5 +26,9 @@ final class SearchViewModel {
                 self.outputSearchResultData.value = result.coins
             }
         }
+    }
+    
+    func saveToRealm(coin: SearchCoin) {
+        repository.createItem(coin)
     }
 }

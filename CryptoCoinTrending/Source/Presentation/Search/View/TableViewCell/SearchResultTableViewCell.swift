@@ -9,7 +9,13 @@ import UIKit
 import SnapKit
 import Then
 
+protocol SearchResultTableViewCellDelegate: AnyObject {
+    func favoriteButtonTapped(on cell: SearchResultTableViewCell)
+}
+
 final class SearchResultTableViewCell: UITableViewCell {
+    
+    weak var delegate: SearchResultTableViewCellDelegate?
     
     static let identifier = "SearchResultCellIdentifier"
     
@@ -82,7 +88,10 @@ final class SearchResultTableViewCell: UITableViewCell {
     
     func configView() {
         backgroundColor = .clear
-        
+        favoriteBtn.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
     }
-
+    
+    @objc func favoriteButtonTapped() {
+        delegate?.favoriteButtonTapped(on: self)
+    }
 }

@@ -41,6 +41,10 @@
 		2E5240F92B8E36C100036E36 /* ChartOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5240F82B8E36C100036E36 /* ChartOverviewTableViewCell.swift */; };
 		2E62B3C72B90EDA10094281F /* MyFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62B3C62B90EDA10094281F /* MyFavoriteTableViewCell.swift */; };
 		2E62B3C92B90FAC70094281F /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62B3C82B90FAC70094281F /* TrendingView.swift */; };
+		2EA5174F2B931D1800D9B099 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5174E2B931D1800D9B099 /* RealmModel.swift */; };
+		2EA517512B931D2500D9B099 /* MyFavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA517502B931D2500D9B099 /* MyFavoriteRepository.swift */; };
+		2EA517542B931D5300D9B099 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA517532B931D5300D9B099 /* Realm */; };
+		2EA517562B931D5300D9B099 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA517552B931D5300D9B099 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +77,8 @@
 		2E5240F82B8E36C100036E36 /* ChartOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		2E62B3C62B90EDA10094281F /* MyFavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		2E62B3C82B90FAC70094281F /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
+		2EA5174E2B931D1800D9B099 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		2EA517502B931D2500D9B099 /* MyFavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +89,11 @@
 				2E5240C22B8DB24F00036E36 /* Toast in Frameworks */,
 				2E5240BF2B8DB1F700036E36 /* Then in Frameworks */,
 				2E2D4A272B920E7200857146 /* Kingfisher in Frameworks */,
+				2EA517562B931D5300D9B099 /* RealmSwift in Frameworks */,
 				2E5240B72B8DB1E600036E36 /* DGCharts in Frameworks */,
 				2E5240BC2B8DB1F000036E36 /* SnapKit in Frameworks */,
 				2E5240B92B8DB1E600036E36 /* DGChartsDynamic in Frameworks */,
+				2EA517542B931D5300D9B099 /* Realm in Frameworks */,
 				2E5240B42B8DB1D900036E36 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,6 +392,7 @@
 			children = (
 				2E5240C32B8DB27D00036E36 /* App */,
 				2E5240DB2B8DB59000036E36 /* Network */,
+				2EA5174D2B931D0700D9B099 /* Realm */,
 				2E5240E42B8DC0EC00036E36 /* Observable */,
 				2E5240C62B8DB2DC00036E36 /* Presentation */,
 			);
@@ -424,6 +433,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		2EA5174D2B931D0700D9B099 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				2EA5174E2B931D1800D9B099 /* RealmModel.swift */,
+				2EA517502B931D2500D9B099 /* MyFavoriteRepository.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -448,6 +466,8 @@
 				2E5240BE2B8DB1F700036E36 /* Then */,
 				2E5240C12B8DB24F00036E36 /* Toast */,
 				2E2D4A262B920E7200857146 /* Kingfisher */,
+				2EA517532B931D5300D9B099 /* Realm */,
+				2EA517552B931D5300D9B099 /* RealmSwift */,
 			);
 			productName = CryptoCoinTrending;
 			productReference = 2E52409B2B8DB10200036E36 /* CryptoCoinTrending.app */;
@@ -484,6 +504,7 @@
 				2E5240BD2B8DB1F700036E36 /* XCRemoteSwiftPackageReference "Then" */,
 				2E5240C02B8DB24F00036E36 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				2E2D4A252B920E7200857146 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				2EA517522B931D5300D9B099 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 2E52409C2B8DB10200036E36 /* Products */;
 			projectDirPath = "";
@@ -522,6 +543,7 @@
 				2E5240EE2B8DC3AF00036E36 /* TrendingViewModel.swift in Sources */,
 				2E2D4A222B91E50700857146 /* ChartViewController.swift in Sources */,
 				2E2D4A2A2B92325F00857146 /* SearchView.swift in Sources */,
+				2EA5174F2B931D1800D9B099 /* RealmModel.swift in Sources */,
 				2E2D4A192B91E1FD00857146 /* TabBarViewController.swift in Sources */,
 				2E2D4A2C2B92385500857146 /* SearchResultTableViewCell.swift in Sources */,
 				2E5240F22B8DE76900036E36 /* CoinGeckoAPIManager.swift in Sources */,
@@ -531,6 +553,7 @@
 				2E5240E62B8DC0F900036E36 /* Observable.swift in Sources */,
 				2E2D4A2F2B923A2200857146 /* SearchViewModel.swift in Sources */,
 				2E2D4A242B91E50E00857146 /* MyPageViewController.swift in Sources */,
+				2EA517512B931D2500D9B099 /* MyFavoriteRepository.swift in Sources */,
 				2E2D4A1E2B91E22900857146 /* MyFavoriteViewController.swift in Sources */,
 				2E5240F72B8E2F0400036E36 /* ChartCollectionViewCell.swift in Sources */,
 				2E2D4A312B924E2C00857146 /* Search.swift in Sources */,
@@ -800,6 +823,14 @@
 				minimumVersion = 5.1.0;
 			};
 		};
+		2EA517522B931D5300D9B099 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -837,6 +868,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E5240C02B8DB24F00036E36 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		2EA517532B931D5300D9B099 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EA517522B931D5300D9B099 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		2EA517552B931D5300D9B099 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EA517522B931D5300D9B099 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
