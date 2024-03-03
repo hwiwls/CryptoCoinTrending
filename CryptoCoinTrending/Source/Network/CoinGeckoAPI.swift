@@ -11,7 +11,7 @@ import Alamofire
 enum CoinGeckoAPI {
     case trending
     case search(query: String)
-    case market(id: Int)
+    case market(id: String)
     
     var baseURL: String {
         return "https://api.coingecko.com/api/v3/"
@@ -23,9 +23,9 @@ enum CoinGeckoAPI {
             return URL(string: baseURL + "search/trending")!
         case .search:
             return URL(string: baseURL + "search")!
-        case .market:
+        case .market(let id):
            // https://api.coingecko.com/api/v3/coins/markets?vs_currency=krw&ids={id}
-           return URL(string: baseURL + "coins/markets?vs_currency=krw")!
+           return URL(string: baseURL + "coins/markets?vs_currency=krw&ids=\(id)&sparkline=true")!
         }
     }
     
@@ -39,8 +39,8 @@ enum CoinGeckoAPI {
             ["": ""]
         case .search(let query):
             ["query": query]
-        case .market(let id):
-            ["ids": id]
+        case .market:
+            ["":""]
         }
     }
     

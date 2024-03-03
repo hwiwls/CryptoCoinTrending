@@ -14,8 +14,6 @@ final class SearchViewController: BaseViewController {
 
     private let searchView = SearchView()
     
-    private var searchResult: [SearchCoin] = []
-    
     let repository = StoredCoinRepository()
     
     var list: Results<StoredCoin>!

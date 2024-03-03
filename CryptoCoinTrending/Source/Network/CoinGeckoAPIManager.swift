@@ -42,4 +42,19 @@ class CoinGeckoAPIManager {
         }
     }
     
+    func fetchCoinMarket(api: CoinGeckoAPI, completionHandler: @escaping ([CoinMarketModel]) -> Void) {
+        AF.request(
+            api.endpoint,
+            method: api.method,
+            parameters: api.parameter
+        ).responseDecodable(of: [CoinMarketModel].self) { response in
+            switch response.result {
+            case .success(let success):
+                completionHandler(success)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+    }
+    
 }

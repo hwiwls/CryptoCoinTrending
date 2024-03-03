@@ -58,4 +58,11 @@ extension MyFavoriteViewController: UICollectionViewDelegate, UICollectionViewDa
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let row = viewModel.list[indexPath.row]
+        let vc = ChartViewController()
+        vc.bitcoinID = row.bitcoinID
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

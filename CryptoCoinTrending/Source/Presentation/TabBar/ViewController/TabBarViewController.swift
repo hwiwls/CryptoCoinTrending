@@ -8,7 +8,7 @@
 
 import UIKit
 
-// 생각보다 높게 나오는 느낌
+// TODO: 생각보다 높게 나오는 느낌. 고치기. navigation이랑 중첩되었으려나
 final class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {

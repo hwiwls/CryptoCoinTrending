@@ -14,7 +14,6 @@ final class StoredCoinRepository {
     func createItem(_ item: StoredCoin) {
         do {
             try realm.write {
-//                let storedCoin = StoredCoin(bitcoinName: item.bitcoinName, bitcoinSymbol: item.symbol)
                 realm.add(item)
             }
         } catch let error {
