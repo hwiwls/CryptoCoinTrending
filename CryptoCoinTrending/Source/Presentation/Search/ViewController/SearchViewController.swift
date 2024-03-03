@@ -22,7 +22,6 @@ final class SearchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.inputViewDidLoadTrigger.value = ()
         viewModel.outputSearchResultData.bind { _ in
             self.searchView.tableView.reloadData()
         }
@@ -88,13 +87,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        CoinGeckoAPIManager.shared.searchCoin(api: .search(query: searchView.searchBar.text ?? "")) { result in
-            self.searchResult = result.coins
-            self.viewModel.inputSearchTrigger.value = searchBar.text
-        }
+        viewModel.inputSearchTrigger.value = searchBar.text
     }
 }
 
+// TODO: 나누기. saveImageToDocument를 viewmodel에서 사용할 수가 없어서..
 extension SearchViewController: SearchResultTableViewCellDelegate {
     func favoriteButtonTapped(on cell: SearchResultTableViewCell) {
         guard let indexPath = searchView.tableView.indexPath(for: cell) else { return }
@@ -102,9 +99,7 @@ extension SearchViewController: SearchResultTableViewCellDelegate {
         let coin = viewModel.outputSearchResultData.value[indexPath.row]
         
         if cell.isFavorite {
-//            viewModel.saveToRealm(coin: coin)
-            
-            let data = StoredCoin(bitcoinName: cell.nameLabel.text ?? "", bitcoinSymbol: cell.symbolLabel.text ?? "")
+            let data = StoredCoin(bitcoinID: coin.id, bitcoinName: coin.name, bitcoinSymbol: coin.symbol)
             
             if let logoImage = cell.logoImageView.image {
                 saveImageToDocument(image: logoImage, filename: "\(data.id)")

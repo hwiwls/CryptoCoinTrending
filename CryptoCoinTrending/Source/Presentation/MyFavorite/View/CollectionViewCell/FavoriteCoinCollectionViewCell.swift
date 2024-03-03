@@ -94,20 +94,22 @@ final class FavoriteCoinCollectionViewCell: UICollectionViewCell {
         nameLabel.snp.makeConstraints {
             $0.top.equalTo(coinImageView.snp.top)
             $0.leading.equalTo(coinImageView.snp.trailing).offset(8)
+            $0.trailing.equalToSuperview().inset(4)
         }
         
         symbolLabel.snp.makeConstraints {
             $0.bottom.equalTo(coinImageView.snp.bottom)
             $0.leading.equalTo(nameLabel)
+            $0.trailing.equalToSuperview().inset(4)
         }
         
         priceLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(12)
+            $0.leading.trailing.equalToSuperview().inset(12)
             $0.bottom.equalTo(priceChangePercentageLabel.snp.top).offset(-8)
         }
         
         priceChangePercentageLabel.snp.makeConstraints {
-            $0.leading.bottom.equalToSuperview().inset(12)
+            $0.leading.trailing.bottom.equalToSuperview().inset(12)
         }
     }
     

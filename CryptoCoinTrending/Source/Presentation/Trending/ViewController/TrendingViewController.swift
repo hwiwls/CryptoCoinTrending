@@ -70,7 +70,7 @@ final class TrendingViewController: BaseViewController {
     }
 }
 
-// 이 부분 코드들을 Protocol, Delegate를 사용해서 분리하기
+// TODO: 분리하기
 extension TrendingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let type = CollectionViewType(rawValue: collectionView.tag) else { return 0 }

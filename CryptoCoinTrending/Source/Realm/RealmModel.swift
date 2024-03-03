@@ -11,11 +11,13 @@ import RealmSwift
 
 class StoredCoin: Object {
     @Persisted(primaryKey: true) var id: ObjectId
+    @Persisted var bitcoinID: String
     @Persisted var bitcoinName: String
     @Persisted var bitcoinSymbol: String
     
-    convenience init(bitcoinName: String, bitcoinSymbol: String) {
+    convenience init(bitcoinID: String, bitcoinName: String, bitcoinSymbol: String) {
         self.init()
+        self.bitcoinID = bitcoinID
         self.bitcoinName = bitcoinName
         self.bitcoinSymbol = bitcoinSymbol
     }

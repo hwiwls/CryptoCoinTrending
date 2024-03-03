@@ -11,7 +11,7 @@ import Alamofire
 class CoinGeckoAPIManager {
     static let shared = CoinGeckoAPIManager()
     
-    // 나중에 제네릭 적용해보기
+    // TODO: 제네릭 적용해보기
     func fetchCoinTrending(api: CoinGeckoAPI, completionHandler: @escaping (TrendingModel) -> Void) {
         AF.request(
             api.endpoint,

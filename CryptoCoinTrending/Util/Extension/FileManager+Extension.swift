@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIViewController {
-    
     // 이미지 불러오기
     func loadImageToDocument(filename: String) -> UIImage? {
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
@@ -33,7 +32,7 @@ extension UIViewController {
         do {
             try data.write(to: fileURL)
         } catch {
-            print("file save error", error)
+            print(error)
         }
     }
     
@@ -46,7 +45,7 @@ extension UIViewController {
             do {
                 try FileManager.default.removeItem(atPath: fileURL.path())
             } catch {
-                print("file remove error", error)
+                print(error)
             }
         } else {
             print("file no exist")
