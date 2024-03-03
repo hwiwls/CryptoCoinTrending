@@ -23,7 +23,6 @@ final class SearchResultTableViewCell: UITableViewCell {
     
     let logoImageView = UIImageView().then {
         $0.image = UIImage(systemName: "star")
-        $0.backgroundColor = .red
     }
     
     let nameLabel = UILabel().then {

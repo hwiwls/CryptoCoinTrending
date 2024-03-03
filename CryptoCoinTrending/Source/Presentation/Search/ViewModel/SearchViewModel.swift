@@ -17,7 +17,7 @@ final class SearchViewModel {
     
     init() {
         inputViewDidLoadTrigger.bind { _ in
-            // View가 로드된 후에 필요한 초기화 작업을 여기에 작성합니다.
+            
         }
 
         inputSearchTrigger.bind { searchText in
@@ -28,15 +28,16 @@ final class SearchViewModel {
         }
     }
     
-    func saveToRealm(coin: SearchCoin) {
+    func saveToRealm(coin: StoredCoin) {
         repository.createItem(coin)
     }
     
-    func deleteFromRealm(coin: SearchCoin) {
+    func deleteFromRealm(_ coin: StoredCoin) {
         repository.deleteItem(coin)
     }
     
-    func isCoinFavorite(coin: SearchCoin) -> Bool {
+    func isCoinFavorite(_ coin: SearchCoin) -> Bool {
         return repository.isItemStored(coin)
     }
+    
 }

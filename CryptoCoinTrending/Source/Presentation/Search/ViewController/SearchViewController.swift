@@ -16,15 +16,17 @@ final class SearchViewController: BaseViewController {
     
     private var searchResult: [SearchCoin] = []
     
+    let repository = StoredCoinRepository()
+    
+    var list: Results<StoredCoin>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.inputViewDidLoadTrigger.value = ()
         viewModel.outputSearchResultData.bind { _ in
             self.searchView.tableView.reloadData()
         }
-        
-        let realm = try! Realm()
-        print(realm.configuration.fileURL ?? "")
+        list = repository.fetch()
     }
     
     override func configView() {
@@ -73,7 +75,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             cell.logoImageView.kf.setImage(with: url)
         }
         
-        let isFavorite = viewModel.isCoinFavorite(coin: searchResult)
+        let isFavorite = viewModel.isCoinFavorite(searchResult)
         cell.setFavoriteStatus(isFavorite)
         
         cell.symbolLabel.text = searchResult.symbol
@@ -96,17 +98,24 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController: SearchResultTableViewCellDelegate {
     func favoriteButtonTapped(on cell: SearchResultTableViewCell) {
         guard let indexPath = searchView.tableView.indexPath(for: cell) else { return }
+        
         let coin = viewModel.outputSearchResultData.value[indexPath.row]
+        
         if cell.isFavorite {
+//            viewModel.saveToRealm(coin: coin)
+            
+            let data = StoredCoin(bitcoinName: cell.nameLabel.text ?? "", bitcoinSymbol: cell.symbolLabel.text ?? "")
+            
             if let logoImage = cell.logoImageView.image {
-                saveImageToDocument(image: logoImage, filename: "\(coin.id)")
+                saveImageToDocument(image: logoImage, filename: "\(data.id)")
             }
-            viewModel.saveToRealm(coin: coin)
+            
+            StoredCoinRepository().createItem(data)
         } else {
-            if let logoImageView = cell.logoImageView.image {
-                removeImage(filename: "\(coin.id)")
+            if let storedCoin = repository.findStoredCoin(coin) {
+                removeImage(filename: "\(storedCoin.id)")
+                StoredCoinRepository().deleteItem(storedCoin)
             }
-            viewModel.deleteFromRealm(coin: coin)
         }
     }
 }

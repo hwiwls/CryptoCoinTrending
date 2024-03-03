@@ -11,21 +11,21 @@ import RealmSwift
 final class StoredCoinRepository {
     let realm = try! Realm()
     
-    func createItem(_ item: SearchCoin) {
+    func createItem(_ item: StoredCoin) {
         do {
             try realm.write {
-                let storedCoin = StoredCoin(bitcoinName: item.name, bitcoinSymbol: item.symbol)
-                realm.add(storedCoin)
+//                let storedCoin = StoredCoin(bitcoinName: item.bitcoinName, bitcoinSymbol: item.symbol)
+                realm.add(item)
             }
         } catch let error {
             print(error)
         }
     }
     
-    func deleteItem(_ item: SearchCoin) {
+    func deleteItem(_ item: StoredCoin) {
         do {
             try realm.write {
-                if let storedCoin = realm.objects(StoredCoin.self).filter("bitcoinName == %@", item.name).first {
+                if let storedCoin = realm.objects(StoredCoin.self).filter("bitcoinName == %@", item.bitcoinName).first {
                     realm.delete(storedCoin)
                 }
             }
@@ -37,5 +37,13 @@ final class StoredCoinRepository {
     func isItemStored(_ item: SearchCoin) -> Bool {
         let storedCoin = realm.objects(StoredCoin.self).filter("bitcoinName == %@", item.name).first
         return storedCoin != nil
+    }
+    
+    func fetch() -> Results<StoredCoin> {
+        return realm.objects(StoredCoin.self)
+    }
+    
+    func findStoredCoin(_ item: SearchCoin) -> StoredCoin? {
+        return realm.objects(StoredCoin.self).filter("bitcoinName == %@", item.name).first
     }
 }

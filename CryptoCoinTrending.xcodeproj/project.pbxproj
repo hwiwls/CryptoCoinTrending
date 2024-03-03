@@ -42,6 +42,8 @@
 		2E62B3C72B90EDA10094281F /* MyFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62B3C62B90EDA10094281F /* MyFavoriteTableViewCell.swift */; };
 		2E62B3C92B90FAC70094281F /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62B3C82B90FAC70094281F /* TrendingView.swift */; };
 		2E6630462B945CDC00BE888C /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6630452B945CDC00BE888C /* FileManager+Extension.swift */; };
+		2E6630482B946F8900BE888C /* MyFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6630472B946F8900BE888C /* MyFavoriteView.swift */; };
+		2E66304B2B946FBC00BE888C /* FavoriteCoinCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66304A2B946FBC00BE888C /* FavoriteCoinCollectionViewCell.swift */; };
 		2EA5174F2B931D1800D9B099 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5174E2B931D1800D9B099 /* RealmModel.swift */; };
 		2EA517512B931D2500D9B099 /* MyFavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA517502B931D2500D9B099 /* MyFavoriteRepository.swift */; };
 		2EA517542B931D5300D9B099 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA517532B931D5300D9B099 /* Realm */; };
@@ -79,6 +81,8 @@
 		2E62B3C62B90EDA10094281F /* MyFavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		2E62B3C82B90FAC70094281F /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
 		2E6630452B945CDC00BE888C /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		2E6630472B946F8900BE888C /* MyFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteView.swift; sourceTree = "<group>"; };
+		2E66304A2B946FBC00BE888C /* FavoriteCoinCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoinCollectionViewCell.swift; sourceTree = "<group>"; };
 		2EA5174E2B931D1800D9B099 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		2EA517502B931D2500D9B099 /* MyFavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -331,6 +335,8 @@
 		2E5240D42B8DB45A00036E36 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2E6630492B946F9F00BE888C /* CollectionViewCell */,
+				2E6630472B946F8900BE888C /* MyFavoriteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -434,6 +440,14 @@
 				2E5240EB2B8DC2E100036E36 /* BaseViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2E6630492B946F9F00BE888C /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E66304A2B946FBC00BE888C /* FavoriteCoinCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		2EA5174D2B931D0700D9B099 /* Realm */ = {
@@ -550,6 +564,7 @@
 				2EA5174F2B931D1800D9B099 /* RealmModel.swift in Sources */,
 				2E2D4A192B91E1FD00857146 /* TabBarViewController.swift in Sources */,
 				2E2D4A2C2B92385500857146 /* SearchResultTableViewCell.swift in Sources */,
+				2E6630482B946F8900BE888C /* MyFavoriteView.swift in Sources */,
 				2E5240F22B8DE76900036E36 /* CoinGeckoAPIManager.swift in Sources */,
 				2E5240DF2B8DBA5600036E36 /* UIColor+CustomColor.swift in Sources */,
 				2E2D4A1C2B91E21B00857146 /* SearchViewController.swift in Sources */,
@@ -557,6 +572,7 @@
 				2E5240E62B8DC0F900036E36 /* Observable.swift in Sources */,
 				2E2D4A2F2B923A2200857146 /* SearchViewModel.swift in Sources */,
 				2E2D4A242B91E50E00857146 /* MyPageViewController.swift in Sources */,
+				2E66304B2B946FBC00BE888C /* FavoriteCoinCollectionViewCell.swift in Sources */,
 				2EA517512B931D2500D9B099 /* MyFavoriteRepository.swift in Sources */,
 				2E2D4A1E2B91E22900857146 /* MyFavoriteViewController.swift in Sources */,
 				2E5240F72B8E2F0400036E36 /* ChartCollectionViewCell.swift in Sources */,

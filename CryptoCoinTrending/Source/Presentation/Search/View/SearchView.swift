@@ -54,8 +54,6 @@ final class SearchView: UIView {
             tableView
         ])
         
-        
-        tableView.backgroundColor = .green
         tableView.backgroundColor = .clear
         tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
         

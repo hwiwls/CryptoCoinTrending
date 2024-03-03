@@ -22,7 +22,6 @@ final class ChartCollectionViewCell: UICollectionViewCell {
     let logoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.image = UIImage(systemName: "star")
-        $0.backgroundColor = .brown
     }
     
     let nameLabel = UILabel().then {

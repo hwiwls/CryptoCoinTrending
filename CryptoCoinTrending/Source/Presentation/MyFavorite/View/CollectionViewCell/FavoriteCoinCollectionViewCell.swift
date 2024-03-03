@@ -1,20 +1,19 @@
 //
-//  MyFavoriteCollectionViewCell.swift
+//  FavoriteCoinCollectionViewCell.swift
 //  CryptoCoinTrending
 //
-//  Created by hwijinjeong on 2/27/24.
+//  Created by hwijinjeong on 3/3/24.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-final class MyFavoriteCollectionViewCell: UICollectionViewCell {
-    
-    static let identifier = "MyFavoriteCellIdentifier"
+final class FavoriteCoinCollectionViewCell: UICollectionViewCell {
+    static let identifier = "FavoriteCoinCellIdentifier"
     
     private let contentsView = UIView().then {
-        $0.backgroundColor = .pointLightGray
+        $0.backgroundColor = .white
     }
     
     let coinImageView = UIImageView().then {
@@ -62,6 +61,11 @@ final class MyFavoriteCollectionViewCell: UICollectionViewCell {
     }
     
     private func configView() {
+        contentsView.layer.cornerRadius = 20
+        contentsView.layer.shadowColor = UIColor.black.cgColor 
+        contentsView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        contentsView.layer.shadowOpacity = 0.1
+        contentsView.layer.shadowRadius = 4
         contentsView.layer.cornerRadius = 20
     }
     

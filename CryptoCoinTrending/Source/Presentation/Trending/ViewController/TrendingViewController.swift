@@ -34,6 +34,9 @@ final class TrendingViewController: BaseViewController {
         
         bindData()
         viewModel.inputViewDidLoadTrigger.value = ()
+        
+        let realm = try! Realm()
+        print(realm.configuration.fileURL ?? "")
     }
     
     func bindData() {
