@@ -98,8 +98,14 @@ extension SearchViewController: SearchResultTableViewCellDelegate {
         guard let indexPath = searchView.tableView.indexPath(for: cell) else { return }
         let coin = viewModel.outputSearchResultData.value[indexPath.row]
         if cell.isFavorite {
+            if let logoImage = cell.logoImageView.image {
+                saveImageToDocument(image: logoImage, filename: "\(coin.id)")
+            }
             viewModel.saveToRealm(coin: coin)
         } else {
+            if let logoImageView = cell.logoImageView.image {
+                removeImage(filename: "\(coin.id)")
+            }
             viewModel.deleteFromRealm(coin: coin)
         }
     }

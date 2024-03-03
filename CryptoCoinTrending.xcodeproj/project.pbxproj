@@ -41,6 +41,7 @@
 		2E5240F92B8E36C100036E36 /* ChartOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5240F82B8E36C100036E36 /* ChartOverviewTableViewCell.swift */; };
 		2E62B3C72B90EDA10094281F /* MyFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62B3C62B90EDA10094281F /* MyFavoriteTableViewCell.swift */; };
 		2E62B3C92B90FAC70094281F /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62B3C82B90FAC70094281F /* TrendingView.swift */; };
+		2E6630462B945CDC00BE888C /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6630452B945CDC00BE888C /* FileManager+Extension.swift */; };
 		2EA5174F2B931D1800D9B099 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5174E2B931D1800D9B099 /* RealmModel.swift */; };
 		2EA517512B931D2500D9B099 /* MyFavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA517502B931D2500D9B099 /* MyFavoriteRepository.swift */; };
 		2EA517542B931D5300D9B099 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA517532B931D5300D9B099 /* Realm */; };
@@ -77,6 +78,7 @@
 		2E5240F82B8E36C100036E36 /* ChartOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		2E62B3C62B90EDA10094281F /* MyFavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		2E62B3C82B90FAC70094281F /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
+		2E6630452B945CDC00BE888C /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		2EA5174E2B931D1800D9B099 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		2EA517502B931D2500D9B099 /* MyFavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +193,7 @@
 			children = (
 				2E5240DE2B8DBA5600036E36 /* UIColor+CustomColor.swift */,
 				2E5240E02B8DBAF000036E36 /* UIView+addSubViews.swift */,
+				2E6630452B945CDC00BE888C /* FileManager+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				2E5240E82B8DC15300036E36 /* MyFavoriteCollectionViewCell.swift in Sources */,
 				2E62B3C92B90FAC70094281F /* TrendingView.swift in Sources */,
 				2E5240F02B8DE31200036E36 /* CoinGeckoAPI.swift in Sources */,
+				2E6630462B945CDC00BE888C /* FileManager+Extension.swift in Sources */,
 				2E5240E12B8DBAF000036E36 /* UIView+addSubViews.swift in Sources */,
 				2E52409F2B8DB10200036E36 /* AppDelegate.swift in Sources */,
 				2E5240E32B8DBC9800036E36 /* TrendingViewController.swift in Sources */,

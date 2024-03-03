@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 import Kingfisher
+import RealmSwift
 
 enum CollectionViewType: Int {
     case myFavorite = 0
@@ -25,6 +26,8 @@ final class TrendingViewController: BaseViewController {
     private var coins: [Coin] = []
     
     private let tableViewTitle = ["Top 15 Coin", "Top 7 NFT"]
+    
+//    var list: Results<StoredCoin>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +86,17 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
         switch type {
         case .myFavorite:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyFavoriteCollectionViewCell.identifier, for: indexPath) as! MyFavoriteCollectionViewCell
+            
+            
+//            let row = list[indexPath.row]
+//            
+//            if let logoImage = loadImageToDocument(filename: "\(row.id)") {
+//                cell.coinImageView.image = logoImage
+//            }
+//            
+//            cell.nameLabel.text = row.bitcoinName
+//            cell.symbolLabel.text = row.bitcoinSymbol
+            
             return cell
         case .coins:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChartCollectionViewCell.identifier, for: indexPath) as! ChartCollectionViewCell
